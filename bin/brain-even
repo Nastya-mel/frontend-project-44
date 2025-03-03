@@ -1,7 +1,0 @@
-export default function
-function count (number) {
-if (number % 2 === 0) {
-    return 'Your answer: yes'
-}
-return 'Your answer: no'
-}
