@@ -33,7 +33,7 @@ export const calculateGame = (name) => {
         }
        
     }
-     console.log(`Congratulations, Sam!`)
+     console.log(`Congratulations, Sam`)
 }
 calculateGame()
 
