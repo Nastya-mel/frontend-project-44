@@ -8,9 +8,8 @@ function getRandomNumber(min = 1, max = 100) {
 
 const gcdCheck = (a, b) => (b === 0 ? a : gcdCheck(b, a % b));
 
-function gcdGame() {
+function gcdGame(name) {
   let attemps = 0;
-  welcome('Find the greatest common divisor of given numbers.');
   while (attemps < 3) {
     const num1 = getRandomNumber(1, 10);
     const num2 = getRandomNumber(1, 10);
@@ -21,10 +20,10 @@ function gcdGame() {
       attemps += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, Sam!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       return;
     }
-    console.log('Congratulations, Sam!');
+    console.log(`Congratulations, ${name}!`);
   }
 }
-gcdGame();
+gcdGame(welcome('Find the greatest common divisor of given numbers.'));

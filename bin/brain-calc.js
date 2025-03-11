@@ -1,39 +1,26 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-function getRandomIntInclusive(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-}
+import welcome, { getRandomNumber, getAnswerQestion } from '../src/cli.js';
 
-
-const getAnswerOfQuestion = {
-    '+': function (x, y) { return x + y; },
-    '-': function (x, y) { return x - y; },
-    '*': function (x, y) { return x * y; }
-}
-
-export const calculateGame = (name) => {
-    console.log("What is the result of the expression?")
-    let count = 0
-    const signs = ['+', '-', '*'];
-
-    while (count < 3) {
-        const firstNumber = getRandomIntInclusive(25, 55)
-        const secondNumber = getRandomIntInclusive(25, 55)
-        const sign = signs[getRandomIntInclusive(0, 2)]
-
-        const answerOfQuestion = getAnswerOfQuestion[sign](firstNumber, secondNumber)
-        console.log(`Question : ${firstNumber} ${sign} ${secondNumber}`)
-        const userAnswer = readlineSync.question(`Your answer:`)
-        if (userAnswer == answerOfQuestion) {
-            count++
-            console.log('Correct!')
-        } else {
-            console.log(`'${userAnswer}'  is wrong answer ;(. Correct answer was '${answerOfQuestion}'.\nLet's try again, Sam!`)
-            return
-        }
-       
+export default function calcGame(name) {
+  welcome();
+  let i = 0;
+  const signs = ['+', '-', '*'];
+  while (i < 3) {
+    const firstNumber = getRandomNumber(25, 55);
+    const secondNumber = getRandomNumber(25, 55);
+    const sign = signs[getRandomNumber(0, 2)];
+    const answerOfQuestion = getAnswerQestion[sign](firstNumber, secondNumber);
+    console.log(`Question: ${firstNumber} ${sign} ${secondNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (`${userAnswer}` === `${answerOfQuestion}`) {
+      i += 1;
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answerOfQuestion}'.\nLet's try again, ${name}!`);
+      return;
     }
-     console.log(`Congratulations, Sam`)
+  }
+  console.log(`Congratulations, ${name}!`);
 }
-calculateGame()
-
+calcGame(welcome('What is the result of the expression?'));
