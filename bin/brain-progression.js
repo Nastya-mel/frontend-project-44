@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import welcome, { getRandomNumber, progression } from '../src/cli.js';
+import welcome, {progression } from '../src/cli.js';
 
 export default function progressionGame(name) {
 
