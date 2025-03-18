@@ -44,4 +44,24 @@ export const calculateGame = (name) => {
     }
 }
 
+export function progression () {
+const arr = [];
+
+const start = getRandomNumber(1, 10);
+const length = getRandomNumber(5, 10);
+const step = getRandomNumber(1, 20);
+
+for (let i = 0; i < length; i += 1) {
+  arr.push(start + step * i);
+}
+
+const randIndex = getRandomNumber(0, arr.length - 1);
+const correctNumber = arr[randIndex];
+arr[randIndex] = '..';
+
+return { arr, correctNumber };
+}
+
+
+
 
