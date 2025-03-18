@@ -14,15 +14,15 @@ export const isEven = (num) => num % 2 === 0 ? 'yes' : 'no';
 export function getRandomIntInclusive(min, max) {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);  
-  }
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+}
 
 export const getAnswerOfQuestion = {
     '+': function (x,y) { return x + y;},
     '-': function (x,y) { return x - y;},
     '*': function (x,y) { return x * y;},
-  }
-  
+}
+
 
 export const calculateGame = (name) => {
     console.log("What is the result of the expression?")
@@ -44,4 +44,4 @@ export const calculateGame = (name) => {
     }
 }
 
- 
+
