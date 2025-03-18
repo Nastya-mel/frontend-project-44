@@ -23,7 +23,7 @@ function gcdGame(name) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       return;
     }
-    console.log(`Congratulations, ${name}!`);
   }
+  console.log(`Congratulations, ${name}!`);
 }
 gcdGame(welcome('Find the greatest common divisor of given numbers.'));
