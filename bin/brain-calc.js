@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import welcome, { getRandomNumber, getAnswerQuestion } from '../src/cli.js';
+import welcome, { getRandomNumber, getAnswerOfQuestion } from '../src/cli.js';
 
 export default function calcGame(name) {
   welcome();
@@ -10,7 +10,7 @@ export default function calcGame(name) {
     const firstNumber = getRandomNumber(25, 55);
     const secondNumber = getRandomNumber(25, 55);
     const sign = signs[getRandomNumber(0, 2)];
-    const answerOfQuestion = getAnswerQuestion[sign](firstNumber, secondNumber);
+    const answerOfQuestion = getAnswerOfQuestion[sign](firstNumber, secondNumber);
     console.log(`Question: ${firstNumber} ${sign} ${secondNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (`${userAnswer}` === `${answerOfQuestion}`) {
