@@ -17,7 +17,7 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);  
   }
 
-  const getAnswerOfQuestion = {
+export const getAnswerOfQuestion = {
     '+': function (x,y) { return x + y;},
     '-': function (x,y) { return x - y;},
     '*': function (x,y) { return x * y;},
