@@ -55,7 +55,7 @@ for (let i = 0; i < length; i += 1) {
   arr.push(start + step * i);
 }
 
-const randIndex = getRandomNumber(0, arr.length - 1);
+const randIndex =  getRandomIntInclusive(0, arr.length - 1);
 const correctNumber = arr[randIndex];
 arr[randIndex] = '..';
 
