@@ -1,39 +1,40 @@
-import globals from 'globals';
-import pluginJs from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
-import importPlugin from 'eslint-plugin-import';
-
-const compat = new FlatCompat({
-  recommendedConfig: pluginJs.configs.recommended,
-});
+import globals from 'globals'
+import pluginJs from '@eslint/js'
+import pluginJest from 'eslint-plugin-jest'
+import stylistic from '@stylistic/eslint-plugin'
 
 export default [
+  stylistic.configs.recommended,
+  pluginJs.configs.recommended,
+
   {
-    languageOptions: { globals: globals.browser },
-    plugins: { import: importPlugin },
-    rules: {
-      ...importPlugin.configs.recommended.rules,
+    files: ['**/*.{js}'],
+    plugins: { jest: pluginJest },
+  },
+  {
+    ignores: ['dist/'],
+  },
+  {
+    languageOptions: {
+      globals: globals.node,
+      parserOptions: {
+        projectService: true,
+      },
     },
   },
-  ...compat.extends('airbnb-base'),
+
   {
+    files: ['**/*.spec.js', '**/*.test.js'],
+    plugins: { jest: pluginJest },
+    languageOptions: {
+      globals: pluginJest.environments.globals.globals,
+    },
     rules: {
-      'no-underscore-dangle': [
-        'error',
-        {
-          allow: ['__filename', '__dirname'],
-        },
-      ],
-      'import/extensions': [
-        'error',
-        {
-          js: 'always',
-        },
-      ],
-      'import/no-named-as-default': 'off',
-      'import/no-named-as-default-member': 'off',
-      'no-console': 'off',
-      'import/no-extraneous-dependencies': 'off',
+      'jest/no-disabled-tests': 'warn',
+      'jest/no-focused-tests': 'error',
+      'jest/no-identical-title': 'error',
+      'jest/prefer-to-have-length': 'warn',
+      'jest/valid-expect': 'error',
     },
   },
-];
+]
