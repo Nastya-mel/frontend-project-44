@@ -31,25 +31,7 @@ export const getAnswerOfQuestion = {
   '*': function (x, y) { return x * y },
 }
 
-export const calculateGame = () => {
-  console.log('What is the result of the expression?')
-  let count = 0
-  const signs = ['+', '-', '*']
-
-  while (count < 3) {
-    const firstNumber = getRandomIntInclusive(25, 55)
-    const secondNumber = getRandomIntInclusive(25, 55)
-    const sign = signs[getRandomIntInclusive](0, 2)
-
-    const answerOfQuestion = getAnswerOfQuestion[sign](firstNumber, secondNumber)
-    console.log(`Question : ${firstNumber} ${sign} ${secondNumber}`)
-    const userAnswer = readlineSync.question(`Your answer:`)
-    if (userAnswer === answerOfQuestion) {
-      count++
-      console.log('Correct!')
-    }
-  }
-}
+ 
 
 export function progression() {
   const arr = []
