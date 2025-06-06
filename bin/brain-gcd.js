@@ -22,5 +22,6 @@ function gcdGame(name) {
     }
   }
   console.log(`Congratulations, ${name}!`)
+  
 }
 gcdGame(welcome('Find the greatest common divisor of given numbers.'))
