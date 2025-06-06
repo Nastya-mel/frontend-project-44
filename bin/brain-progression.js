@@ -16,8 +16,8 @@ export default function progressionGame(name) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctNumber}'.\nLet's try again, ${name}!`)
       return
     }
-    console.log(`Congratulations, ${name}!`)
   }
+  console.log(`Congratulations, ${name}!`)
 }
 
 progressionGame(welcome('What number is missing in the progression?'))
