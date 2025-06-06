@@ -20,10 +20,9 @@ export const isPrime = (num) => {
   }
 }
 
-export function getRandomIntInclusive(min, max) {
-  const minCeiled = Math.ceil(min)
-  const maxFloored = Math.floor(max)
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled)
+export function getRandomIntInclusive(min = 1, max = 100) {
+  const range = max - min + 1
+  return Math.floor(Math.random() * range) + min
 }
 
 export const getAnswerOfQuestion = {
