@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/motya-creat/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/motya-creat/frontend-project-44/actions)",
+  "description": "[![Actions Status](https://github.com/Nastya-mel/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Nastya-mel/frontend-project-44/actions)",
   "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/motya-creat/frontend-project-44.git"
+    "url": "git+https://github.com/Nastya-mel/frontend-project-44.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/motya-creat/frontend-project-44/issues"
+    "url": "https://github.com/Nastya-mel/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/motya-creat/frontend-project-44#readme",
+  "homepage": "https://github.com/Nastya-mel/frontend-project-44#readme",
   "dependencies": {
     "eslint-plugin-jest": "^28.12.0",
     "link": "^2.1.1",
