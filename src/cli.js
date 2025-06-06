@@ -13,11 +13,10 @@ export const isEven = num => num % 2 === 0 ? 'yes' : 'no'
 
 export const isPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
-    if (num % i === 0) {
-      return false
-    }
-    return num > 1
+    if (num % i === 0) return false
   }
+    if (num === 2) return true
+  return num > 1
 }
 
 export function getRandomIntInclusive(min = 1, max = 100) {
